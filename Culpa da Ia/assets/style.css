@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght=0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 1s ease, color 0.6s ease, box-shadow 1s ease;
+    overflow-x: hidden;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+/* Container de Efeitos Flutuantes */
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+CONFIGURAÇÃO DOS TEMAS DE BOSS (EFEITOS ATMOSFÉRICOS)
+   ========================================== */
+:root, body[data-theme="default"] {
+    --bg-color: #08090c;
+    --text-color: #c5a880;
+    --accent-color: #ffd700;
+    --glow-color: rgba(255, 215, 0, 0.2);
+    --bg-card: #13161c;
+}
+
+body[data-theme="godrick"] {
+    --bg-color: #120f0b;
+    --text-color: #c4b595;
+    --accent-color: #a37613;
+    --glow-color: rgba(163, 118, 19, 0.3);
+    --bg-card: #1f1a14;
+}
+
+body[data-theme="radahn"] {
+    --bg-color: #0c0714;
+    --text-color: #d9c3bd;
+    --accent-color: #5d2596; /* Gravidade Púrpura */
+    --glow-color: rgba(93, 37, 150, 0.6);
+    --bg-card: #170d24;
+    animation: gravityPulse 6s infinite ease-in-out;
+}
+
+body[data-theme="rykard"] {
+    --bg-color: #140400;
+    --text-color: #f79e54;
+    --accent-color: #e63900; /* Lava */
+    --glow-color: rgba(230, 57, 0, 0.5);
+    --bg-card: #260902;
+}
+
+body[data-theme="malenia"] {
+    --bg-color: #0b120c;
+    --text-color: #baccb0;
+    --accent-color: #cd853f; /* Ouro Fosco da Podridão */
+    --glow-color: rgba(139, 69, 19, 0.4);
+    --bg-card: #131f15;
+    box-shadow: inset 0 0 120px rgba(186, 203, 176, 0.15);
+}
+
+body[data-theme="morgott"] {
+    --bg-color: #14130f;
+    --text-color: #cfbe95;
+    --accent-color: #8bad39; /* Ouro Sagrado Corrompido */
+    --glow-color: rgba(139, 173, 57, 0.3);
+    --bg-card: #211f18;
+}
+
+body[data-theme="mohgh"] {
+    --bg-color: #0f0204;
+    --text-color: #e6a1aa;
+    --accent-color: #8b0000; /* Fogo de Sangue */
+    --glow-color: rgba(139, 0, 0, 0.7);
+    --bg-card: #21050a;
+}
+
+body[data-theme="placidusax"] {
+    --bg-color: #0f0f12;
+    --text-color: #cfc6b4;
+    --accent-color: #ff3333; /* Raios Vermelhos */
+    --glow-color: rgba(255, 51, 51, 0.4);
+    --bg-card: #1c1c24;
+}
+
+body[data-theme="maliketh"] {
+    --bg-color: #07070a;
+    --text-color: #ccd0d6;
+    --accent-color: #cf1b42; /* Destino da Lâmina Negra */
+    --glow-color: rgba(207, 27, 66, 0.5);
+    --bg-card: #12131a;
+}
+
+/* Temas DLC */
+body[data-theme="dlc-default"] {
+    --bg-color: #08070a;
+    --text-color: #928396;
+    --accent-color: #63436b;
+    --glow-color: rgba(99, 67, 107, 0.3);
+    --bg-card: #141117;
+}
+
+body[data-theme="messmer"] {
+    --bg-color: #140202;
+    --text-color: #fca6a6;
+    --accent-color: #e61919;
+    --glow-color: rgba(230, 25, 25, 0.6);
+    --bg-card: #290707;
+}
+
+body[data-theme="romina"] {
+    --bg-color: #120514;
+    --text-color: #eab4f0;
+    --accent-color: #c71585; /* Rosa/Roxo do Broto */
+    --glow-color: rgba(199, 21, 133, 0.5);
+    --bg-card: #240b29;
+}
+
+body[data-theme="radahn-miquella"] {
+    --bg-color: #060c14;
+    --text-color: #d1e8ff;
+    --accent-color: #e5c158; /* Luz Divina */
+    --glow-color: rgba(229, 193, 88, 0.5);
+    --bg-card: #111a26;
+}
+
+body[data-theme="midra"] {
+    --bg-color: #1c1402;
+    --text-color: #fce2a6;
+    --accent-color: #ff8c00; /* Chama Frenética Abissal */
+    --glow-color: rgba(255, 140, 0, 0.7);
+    --bg-card: #332405;
+}
+
+body[data-theme="bayle"] {
+    --bg-color: #140c0a;
+    --text-color: #f7bfa8;
+    --accent-color: #ff4500; /* Fogo de Magma Elétrico */
+    --glow-color: rgba(255, 69, 0, 0.5);
+    --bg-card: #261510;
+}
+
+/* Animações Ambientais CSS */
+@keyframes gravityPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.005); box-shadow: inset 0 0 100px rgba(93, 37, 150, 0.3); }
+}
+
+/* ==========================================
+   ESTRUTURA E INTERFACE DO USUÁRIO
+   ========================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid var(--accent-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: border 0.5s ease;
+}
+
+header .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+.dlc-link {
+    border: 1px solid var(--accent-color);
+    padding: 8px 15px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.05);
+}
+
+.hero-section {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920') center/cover;
+    padding: 0 15%;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 15px var(--glow-color);
+    margin-bottom: 15px;
+}
+
+#bosses, #finais {
+    padding: 60px 7%;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+#bosses h2, #finais h2 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.instruction {
+    font-style: italic;
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.boss-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.boss-btn {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 10px 20px;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.boss-btn:hover, .boss-btn.active {
+    border-color: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 0 15px var(--glow-color);
+    background-color: var(--bg-card);
+}
+
+.boss-display {
+    background-color: var(--bg-card);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 25px var(--glow-color);
+    transition: all 0.5s ease-in-out;
+}
+
+#boss-name {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+#boss-lore {
+    line-height: 1.8;
+    font-size: 1.3rem;
+}
+
+/* Grid de Finais */
+.finais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.final-card {
+    background-color: #121317;
+}

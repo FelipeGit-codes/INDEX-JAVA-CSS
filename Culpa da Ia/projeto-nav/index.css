@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-navegação {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.menu-navegação a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.menu-navegação a:hover {
+    color: #ddd;
+}
+
+.body-index {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Ring Lore - Enciclopédia Prístina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="default">
+    <div id="particle-container"></div>
+
+    <header>
+        <div class="logo">ELDEN RING LORE</div>
+        <nav>
+            <a href="#lore-intro">A Devastação</a>
+            <a href="#bosses">Chefes Notáveis</a>
+            <a href="#finais">Os 6 Finais</a>
+            <a href="dlc.html" class="dlc-link">Shadow of the Erdtree ➔</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="lore-intro" class="hero-section">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>As Ilhas Intermédias</h1>
+                <p>O Anel Prístino foi estilhaçado. A loucura dos semideuses desencadeou a Devastação. Explore os mitos dos maiores seres que já pisaram nesta terra e escolha qual ordem você deseja instaurar.</p>
+            </div>
+        </section>
+
+        <section id="bosses">
+            <h2>Grandes Semideuses & Lendas Antigas</h2>
+            <p class="instruction">Selecione um chefe para canalizar sua essência e alterar a atmosfera do ambiente.</p>
+            
+            <div class="boss-grid">
+                <button class="boss-btn active" data-boss="default">O Anel Prístino</button>
+                <button class="boss-btn" data-boss="godrick">Godrick, o Enxertado</button>
+                <button class="boss-btn" data-boss="radahn">General Radahn</button>
+                <button class="boss-btn" data-boss="rykard">Lorde Rykard</button>
+                <button class="boss-btn" data-boss="malenia">Malenia, Espada de Miquella</button>
+                <button class="boss-btn" data-boss="morgott">Morgott, o Rei Agouro</button>
+                <button class="boss-btn" data-boss="mohgh">Mohg, Lorde do Sangue</button>
+                <button class="boss-btn" data-boss="placidusax">Lorde Dragão Placidusax</button>
+                <button class="boss-btn" data-boss="maliketh">Maliketh, a Lâmina Negra</button>
+            </div>
+
+            <div class="boss-display">
+                <div id="boss-content">
+                    <h3 id="boss-name">O Caos das Ilhas Intermédias</h3>
+                    <p id="boss-lore">Escolha um dos líderes míticos acima para extrair sua história oculta e testemunhar o poder que moldou sua própria realidade física.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="finais">
+            <h2>Os Seis Destinos das Ilhas Intermédias</h2>
+            <p class="instruction">As runas de reparo coletadas determinam o destino da Térvore e de toda a existência.</p>
+            
+            <div class="finais-grid">
+                <div class="final-card" style="--border-color: #ffd700;">
+                    <h3>Era da Fratura</h3>
+                    <p><strong>O Final Padrão.</strong> O Maculado repara o Elden Ring sem adicionar novas runas conceituais. Você se torna o Lorde Prístino, sentando-se no trono de uma Leyndell quebrada. A ordem antiga é restaurada, mas o ciclo de decadência e estagnação das Ilhas Intermédias continua exatamente o mesmo.</p>
+                </div>
+                <div class="final-card" style="--border-color: #9acd32;">
+                    <h3>Era do Crepúsculo</h3>
+                    <p><strong>Linha de Missão de Fia.</strong> Utilizando a Runa de Reparo do Príncipe da Morte, você integra o conceito da morte natural de volta à Ordem Prístina. O ciclo de imortalidade artificial da Térvore acaba. A vida agora flui em direção ao seu fim legítimo, aceitando e legitimando "aqueles que vivem na morte".</p>
+                </div>
+                <div class="final-card" style="--border-color: #4682b4;">
+                    <h3>Era da Ordem Perfeita</h3>
+                    <p><strong>Linha de Missão do Máscara de Ouro.</strong> A Runa de Reparo da Ordem Perfeita corrige a maior falha do mundo: a inconstância e os sentimentos dos deuses (como os caprichos de Marika). A nova ordem torna-se puramente matemática e absoluta, blindada contra a influência de ambições divinas ou humanas.</p>
+                </div>
+                <div class="final-card" style="--border-color: #8b4513;">
+                    <h3>Bênção do Desespero</h3>
+                    <p><strong>Linha de Missão do Comedor de Estrumes.</strong> Usando a Runa de Reparo da Maldição Caída, você condena todas as gerações presentes e futuras a uma mutação eterna de agouro. O sofrimento e a rejeição tornam-se a norma absoluta; quando todos forem amaldiçoados de forma idêntica, o conceito de "maldição" deixa de existir.</p>
+                </div>
+                <div class="final-card" style="--border-color: #00ffff;">
+                    <h3>Era das Estrelas</h3>
+                    <p><strong>Linha de Missão de Ranni, a Bruxa.</strong> Você ajuda Ranni a ascender como a nova Divindade, substituindo Marika. Ela remove completamente o Elden Ring e a influência da Vontade Maior das Ilhas Intermédias. O mundo entra em uma jornada fria, solitária e livre, guiada pela Lua e pelas estrelas, sem o controle de deuses tiranos.</p>
+                </div>
+                <div class="final-card" style="--border-color: #ff4500;">
+                    <h3>Senhor da Chama Frenética</h3>
+                    <p><strong>A Heresia dos Três Dedos.</strong> O final mais destrutivo. Você se torna o avatar do Caos. Em vez de consertar o anel, você incendeia a Térvore e derrete toda a estrutura do mundo com o fogo amarelo da loucura. O objetivo é queimar todas as divisões e distinções geradas pela Vontade Maior, retornando tudo ao Vazio Primal.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Registro de Lore de Elden Ring. Desenvolvido por e para Maculados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

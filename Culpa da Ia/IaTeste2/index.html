@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Ring Lore - Todos os Talismãs</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilização Avançada dos Filtros e Grade */
+        .filter-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 7%;
+            position: relative;
+            z-index: 10;
+        }
+        .filter-btn {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #c5a880;
+            color: #c5a880;
+            padding: 10px 18px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #ffd700;
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            border-color: #ffd700;
+            font-weight: bold;
+        }
+        .talisma-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 7% 60px 7%;
+            position: relative;
+            z-index: 5;
+            min-height: 400px;
+        }
+        .talisma-card {
+            background-color: #13161c;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
+        }
+        .talisma-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--glow-color, rgba(255, 215, 0, 0.2));
+            border-color: var(--accent-color, #ffd700);
+        }
+        .talisma-img-wrapper {
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            background: radial-gradient(circle, rgba(197,168,128,0.08) 0%, rgba(0,0,0,0) 70%);
+        }
+        .talisma-card img {
+            max-height: 90px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 6px rgba(0,0,0,0.8));
+            transition: transform 0.3s ease;
+        }
+        .talisma-card:hover img {
+            transform: scale(1.1);
+        }
+        .talisma-card h3 {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .talisma-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #b2b8c2;
+        }
+    </style>
+</head>
+<body data-theme="default">
+    <div id="particle-container"></div>
+
+    <header>
+        <div class="logo">COMPÊNDIO DE TALISMÃS</div>
+        <nav>
+            <a href="index.html">⬅ Voltar ao Jogo Base</a>
+            <a href="dlc.html" class="dlc-link">Shadow of the Erdtree ➔</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" style="height: 30vh; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.98)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920') center/top;">
+            <div class="content">
+                <h1>Os Acessórios Sagrados das Ilhas Intermédias</h1>
+                <p>Filtre por tipo e examine o inventário completo contendo as relíquias e segredos de caçadores, deuses e lordes.</p>
+            </div>
+        </section>
+
+        <div class="filter-menu">
+            <button class="filter-btn active" data-filter="all">Todos os Itens</button>
+            <button class="filter-btn" data-filter="status">Atributos & PV</button>
+            <button class="filter-btn" data-filter="combate">Combate & Ataque</button>
+            <button class="filter-btn" data-filter="defesa">Negação & Defesa</button>
+            <button class="filter-btn" data-filter="magia">Feitiços & Encantos</button>
+            <button class="filter-btn" data-filter="dlc">Expansão (DLC)</button>
+        </div>
+
+        <div class="talisma-container" id="talismas-grid">
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Registro de Lore de Elden Ring - Inventário Absoluto de Talismãs.</p>
+    </footer>
+
+    <script src="script-talismas.js"></script>
+</body>
+</html>

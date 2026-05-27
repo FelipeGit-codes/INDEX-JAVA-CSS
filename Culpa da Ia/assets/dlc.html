@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Ring Lore - Shadow of the Erdtree</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dlc-default">
+    <div id="particle-container"></div>
+
+    <header>
+        <div class="logo dlc-logo">SHADOW OF THE ERDTREE</div>
+        <nav>
+            <a href="index.html">⬅ Voltar ao Jogo Base</a>
+            <a href="#dlc-intro">A Terra das Sombras</a>
+            <a href="#bosses">Chefes Lendários</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dlc-intro" class="hero-section dlc-hero">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>A Terra das Sombras</h1>
+                <p>Onde o ouro da Térvore não brilha. Conheça as divindades trágicas e os carrascos esquecidos que guardam os segredos de Miquella, o Gentil.</p>
+            </div>
+        </section>
+
+        <section id="bosses">
+            <h2>Ameaças da Terra das Sombras</h2>
+            <p class="instruction">Selecione um algoz para invocar suas chamas, pragas ou luz divina.</p>
+            
+            <div class="boss-grid">
+                <button class="boss-btn active" data-boss="dlc-default">A Árvore Sombria</button>
+                <button class="boss-btn" data-boss="messmer">Messmer, o Empalador</button>
+                <button class="boss-btn" data-boss="romina">Romina, Santa do Broto</button>
+                <button class="boss-btn" data-boss="radahn-miquella">Consorte Prometido Radahn</button>
+                <button class="boss-btn" data-boss="midra">Midra, Senhor da Chama Frenética</button>
+                <button class="boss-btn" data-boss="bayle">Bayle, o Temível</button>
+            </div>
+
+            <div class="boss-display">
+                <div id="boss-content">
+                    <h3 id="boss-name">O Casulo Oculto</h3>
+                    <p id="boss-lore">Explore os segredos daqueles que guardam os portões da divindade oculta. Cuidado com as cinzas e as traições enterradas sob o véu.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Registro de Lore de Elden Ring - Expansão Shadow of the Erdtree.</p>
+    </footer>
+
+    <script src="script-dlc.js"></script>
+</body>
+</html>
